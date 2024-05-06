@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>todo list</title>
+  
+</head>
+
+<body style="background-color: rgba(220, 214, 206, 0.936);">
+    <form action="/insertData" method="post" style="width: 500px; margin: auto;padding: 10px;box-shadow: 0px 0px 7px 0px black;">
+        <caption><h1 style="text-align: center;">TO DO LIST</h1></caption>
+        <table  cellspacing="0" cellpadding="" style="width: 500px; margin: auto;padding: 20px;">
+            <tr>
+                <th>Task Id</th>
+                <td><input type="text" name="taskId" id=""style="padding: 10px 10px;margin-left:8px;border-radius:7px;background-color:rgb(240, 239, 239);border:0;"></td>
+            </tr>
+            <tr>
+                <th>Task</th>
+                <td><input type="text" name="name" id=""style="padding: 10px 10px;margin-left:8px;margin-top:10px;border-radius:7px;background-color:rgb(240, 239, 239);border:0;"></td>
+            </tr>
+            <td style="text-align: center;"><input type="submit" value="submit"style="padding: 10px 30px;border-radius:7px;border:0;background-color: skyblue;"></td>
+            
+
+
+
+
+
+
+
+            
+        </table>
+
+    </form>
+    <table cellspacing="0" cellpadding="5"style="width: 500px; margin: auto;box-shadow: 0px 0px 7px 0px black;padding:20px;border-radius:7px;" >
+        <caption><h1 style="text-align: start;margin-top: 50px;">USER DATA</h1></caption>
+        <tr style="">
+            <th>Task Id</th>
+            <th>Name</th>
+        </tr>
+        <% user.map((val)=>{ %>
+            <tr>
+                <td style="padding:11px;text-align: center;">
+                    <%=val.taskId %>
+                </td>
+                <td style="padding:11px;text-align: center;">
+                    <%=val.name %>
+                </td>
+                <td style="text-align: end;">
+                    <a href="/deleteData?taskId=<%=val.taskId %>"style="padding:10px 20px;border-radius:7px;background-color:red;border:0;text-decoration:none;color:white;">Delete</a>
+                    <a href="/editData?taskId=<%=val.taskId %>"style="padding:10px 20px;border-radius:7px;background-color:green;border:0;text-decoration:none;color:white;">Edit</a>
+                </td>
+            </tr>
+
+
+            <% }) %>
+    </table>
+
+</body>
+
+</html>

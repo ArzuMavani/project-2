@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+
+<body style="background-color: rgba(220, 214, 206, 0.936);">
+    <form action="/insertData" method="post">
+
+        <table align="center" cellspacing="0" cellpadding="5" style="width:500px;">
+            <caption> <h1>EDIT TASK DATA</h1></caption>
+            <tr>
+                <th>Task Id</th>
+                <td><input type="text" name="taskId" id="" value="<%= use.taskId %>" disabled style="padding: 10px 10px;margin-left:8px;border-radius:7px;background-color:rgb(240, 239, 239);border:0;"> 
+                    <input type="hidden" name="editId" id="" value="<%= use.taskId %>">
+
+                </td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td><input type="text" name="name" id="" value="<%= use.name %>"style="padding: 10px 10px;margin-left:8px;border-radius:7px;background-color:rgb(240, 239, 239);border:0;"></td>
+            </tr>
+
+            <tr>
+                <th></th>
+                <td><input type="submit" value="Update" style="padding: 10px 30px;border-radius:7px;border:0;background-color: skyblue; margin-left:8px;"></td>
+            </tr>
+        </table>
+
+
+    </form>
+
+</body>
+
+</html>
